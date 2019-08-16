@@ -1,7 +1,5 @@
-#include <iostream>
 #include <fstream>
 #include <random>
-#include <chrono>
 #include <math.h>
 
 using namespace std;
@@ -53,7 +51,8 @@ int main(){
 		double R=gran(rgen)*sqrt(2*zeta*kT/dt);
 		//compute a random number with gaussian distribution.
 		//The factor sqrt(2*\zeta*kT/dt) shifts the random number to have the
-		//correct variance.
+		//correct variance.  Note that this factor in the squre root is different
+		//than for the brownian motion term.  
 		
 		xnew=x;  //start at new position
 		xnew+=(x-xold)*(1-zeta*dt/2/m)/(1+zeta*dt/2/m); //update location based on velocity
